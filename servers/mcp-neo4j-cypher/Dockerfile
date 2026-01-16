@@ -18,6 +18,9 @@ RUN pip install --no-cache-dir neo4j>=5.26.0 fastmcp>=2.10.5
 COPY src/ /app/src/
 COPY README.md /app/
 
+# Copy Dino's custom SSE handler
+COPY sse.py /app/
+
 RUN pip install --no-cache-dir -e .
 
 # adding comment to trigger Docker hub build
